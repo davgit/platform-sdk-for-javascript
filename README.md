@@ -47,7 +47,7 @@ $(document).on("api:system:ready", function () {
         dreamfactory.user.login(body)
             .then(function (response) {
             //set session token for upcoming calls
-               window.dreamfactory.SESSION_TOKEN = response.session_id;
+               sessionStorage.SESSION_ID = response.session_id;
                 dreamfactory.db.getRecords({table_name: "todo"});
             }, function (error) {
                //console.log(error);
